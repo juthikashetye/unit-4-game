@@ -4,8 +4,12 @@ var myScoreCounter = 0;
 var winCounter = 0;
 var lossCounter = 0;
 
-$("#goalnumber").html(goal);
-$("#score").html(myScoreCounter);
+function setGoalMyScore (){
+	$("#goalnumber").html(goal);
+	$("#score").html(myScoreCounter);
+}
+setGoalMyScore ();
+
 $("#wins").html(winCounter);
 $("#losses").html(lossCounter);
 
@@ -42,6 +46,5 @@ function reset (){
  	crystalValue = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
  	myScoreCounter = 0; 
  	assignCrystalValue();
- 	$("#goalnumber").html(goal);
-	$("#score").html(myScoreCounter);	
+ 	setGoalMyScore ();	
 }
