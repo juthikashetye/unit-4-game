@@ -1,50 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Crystal Game</title>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
-	<div class="container mx-auto mt-2 p-2">
-	<h1 class="text-center mb-3">Crystal Collector</h1>
-
-	<div>
-	<p>You will be given a random number at the start of the game.</p>
-	<p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-	<p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
-	<p>The value of each crystal is hidden from you until you click on it.</p>
-	<p>Each time when the game starts, the game will change the values of each crystal.</p>
-	</div>
-	<div class="targetnumber mx-auto p-2 text-center">
-	<p id="goalnumber"></p>
-	</div>
-	
-	<div class="text-center">
-	<p>Wins : <span id="wins"></span></p>
-	<p>Losses : <span id="losses"></span></p>
-	</div>
-	
-	<div class="text-center mt-5 mb-5">
-		<button><img class="jewelImage" id="blue" src="assets/images/blue.png"></button>
-		<button><img class="jewelImage" id="green" src="assets/images/green.png"></button>
-		<button><img class="jewelImage" id="red" src="assets/images/red.png"></button>
-		<button><img class="jewelImage" id="yellow" src="assets/images/yellow.png"></button>
-	</div>
-	
-	<div class="scoreboard mx-auto p-2 text-center">
-		<p>Your total score is :</p>
-		<p id="score"></p>
-	</div>
-	</div>
-<!-- Bootstrap javascript -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<!-- jQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- External Javascript -->
-<script src="assets/javascript/game.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Crystal Game</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  </head>
+  <body>
+    <div class="container mx-auto mt-2 p-3">
+      <h1 class="text-center mb-3">Crystal Collector</h1>
+      <div class="row no-gutters">
+        <div class="col-sm-12">
+          <p>You will be given a random number at the start of the game.</p>
+          <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+          <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+          <p>The value of each crystal is hidden from you until you click on it.</p>
+          <p>Each time when the game starts, the game will change the values of each crystal.</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="targetnumber col-sm-6 col-lg-3 justify-content-center text-center pt-3 m-1">
+          <p id="goalnumber"></p>
+        </div>
+        <div class="gameboard col-sm-6 col-lg-3 justify-content-center text-center pt-2 m-1">
+          <p>Wins : <span id="wins"></span></p>
+          <p>Losses : <span id="losses"></span></p>
+        </div>
+      </div>
+      <div class="row mt-2 mb-2">
+        <div class="col-sm-12 mx-auto text-center">
+          <button class="p-0"><img class="jewelImage m-0" id="blue" src="assets/images/blue.png" alt="blue crystal"></button>
+          <button class="p-0"><img class="jewelImage m-0" id="green" src="assets/images/green.png" alt="green crystal"></button>
+          <button class="p-0"><img class="jewelImage m-0" id="red" src="assets/images/red.png" alt="red crystal"></button>
+          <button class="p-0"><img class="jewelImage m-0" id="yellow" src="assets/images/yellow.png" alt="yellow crystal"></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="scoreboard col-sm-12 col-lg-4 mx-auto pt-3 text-center">
+          <p>Your total score is :</p>
+          <p id="score"></p>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- External Javascript -->
+    <script src="assets/javascript/game.js"></script>
+  </body>
 </html>

@@ -2,44 +2,57 @@ body {
 	background-color: #3d003d;
 	background-image: url(../images/glowing.jpg);
 	background-size: cover;
-	color: 	#fffff2;
-	font-size: 20px;
+	background-repeat: no-repeat;
+	color: #ffffff;
+	font-size: 18px;
 }
+
 .container {
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0, 0, 0, 0.3);
 }
+
 p {
 	color: #ffe7ff;
 }
-.targetnumber {
-	background-color: rgba(102,0,102,0.8);
-	width: 40%;
+
+.targetnumber,
+.gameboard {
+	background-color: rgba(102, 0, 102, 0.7);
+	border: 1px solid #ffcc66;
 }
-#score, #goalnumber {
+
+#score,
+#goalnumber {
 	font-size: 175%;
-	color: #fffff2; 
 }
+
 .scoreboard {
-	background-color: rgba(102,0,102,0.8);
-	width: 40%;
+	background-color: rgba(184, 0, 184, 0.7);
+	border: 1px solid #ffcc66;
 }
+
 h1 {
 	color: #ff5cff;
-	margin: auto;
 	font-size: 300%;
 	font-family: Copperplate, fantasy;
-	
 }
 
 button {
 	width: 100px;
 	height: 100px;
-	padding: 0;
+	border: 2px solid #ffcc66;
 }
 
-img {
+button:hover {
+	border: 4px solid red;
+	cursor: -webkit-grab;
+}
+
+button:active {
+	cursor: -webkit-grabbing;
+}
+
+.jewelImage {
 	width: 90px;
 	height: 90px;
-	margin: 0;
 }
-
