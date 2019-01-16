@@ -20,8 +20,8 @@ function assignCrystalValue() {
   });
 
   // Iterate through the jewels and assign unique crystal value
-  // to each jewel according to 
-  // the shuffled arrayOfCrystalValues' indexes
+  // to each of the 4 jewels according to 
+  // the shuffled arrayOfCrystalValues' first 4 indexes
   for (var i = 0; i < arrayOfJewels.length; i++) {
 
     arrayOfJewels[i].attr("data-crystalvalue", crystalValue[i]);
