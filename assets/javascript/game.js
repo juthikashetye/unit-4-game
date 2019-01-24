@@ -3,6 +3,26 @@ var myScoreCounter = 0;
 var winCounter = 0;
 var lossCounter = 0;
 
+var crystalImages = [
+  "assets/images/blue.png",
+  "assets/images/green.png",
+  "assets/images/red.png",
+  "assets/images/yellow.png",
+];
+
+function appendCrystals() {
+  for (var i = 0; i < crystalImages.length; i++) {
+
+    var buttons = $("<button>");
+
+    var jewels = $("<img>").attr("src", crystalImages[i]);
+    jewels.addClass("jewelImage");
+    buttons.append(jewels);
+
+    $(".buttonHolder").append(buttons);
+  }
+}
+
 // Set text of the counters
 function displayCountersOnScreen() {
   $("#goalnumber").html(goal);
@@ -12,50 +32,67 @@ function displayCountersOnScreen() {
 }
 
 function assignCrystalValue() {
-  var arrayOfJewels = [$('#blue'), $('#green'), $('#red'), $('#yellow')];
-  var arrayOfCrystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  // Formula for shuffling array of crystalValues
-  var crystalValue = arrayOfCrystalValues.sort(function(a, b) {
-    return 0.5 - Math.random();
-  });
 
-  // Iterate through the jewels and assign unique crystal value
-  // to each of the 4 jewels according to 
-  // the shuffled arrayOfCrystalValues' first 4 indexes
-  for (var i = 0; i < arrayOfJewels.length; i++) {
+  var arrOfCrystalValues = [];
+  var minNum = 1;
+  var maxNum = 12;
 
-    arrayOfJewels[i].data("crystalvalue", crystalValue[i]);
+  // Generate unique crystal values equal to the no. of crystals on page
+  while (arrOfCrystalValues.length < crystalImages.length) {
+
+    var crystalValue = getRandomValue(minNum, maxNum);
+
+    if (arrOfCrystalValues.indexOf(crystalValue) === -1) {
+
+      arrOfCrystalValues.push(crystalValue);
+
+    }
+  }
+
+  // Assign the generated crystal values to the crystals
+  for (var i = 0; i < arrOfCrystalValues.length; i++) {
+
+    $('.jewelImage').eq(i).data("crystalvalue", arrOfCrystalValues[i]);
 
   }
 }
 
-$(".jewelImage").on("click", function() {
-  var clickedJewelValue = parseInt($(this).data("crystalvalue"));
-  // Add the values of data-crystalvalues of clicked jewels
-  // to your score
-  myScoreCounter += clickedJewelValue;
-  $("#score").html(myScoreCounter);
+function addEventListener() {
 
-  if (myScoreCounter === goal) {
-    winCounter++;
-    $("#wins").html(winCounter);
-    start();
+  $(".jewelImage").on("click", function() {
 
-  } else if (myScoreCounter > goal) {
-    lossCounter++;
-    $("#losses").html(lossCounter);
-    start();
-  }
+    var clickedJewelValue = parseInt($(this).data("crystalvalue"));
+    // Add the values of data-crystalvalues of clicked jewels
+    // to your score
+    myScoreCounter += clickedJewelValue;
+    $("#score").html(myScoreCounter);
 
-});
+    if (myScoreCounter === goal) {
+      winCounter++;
+      $("#wins").html(winCounter);
+      start();
+
+    } else if (myScoreCounter > goal) {
+      lossCounter++;
+      $("#losses").html(lossCounter);
+      start();
+    }
+
+  });
+}
+
+function getRandomValue(lowerBound, upperBound) {
+  return Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
+}
 
 function start() {
-  var upperBound = 120;
-  var lowerBound = 19;
-  goal = Math.floor(Math.random() * (upperBound-lowerBound+1)) + lowerBound;
+  var lowerLimit = 19;
+  var upperLimit = 120;
+  goal = getRandomValue(lowerLimit, upperLimit);
   myScoreCounter = 0;
   assignCrystalValue();
   displayCountersOnScreen();
 }
-
+appendCrystals();
+addEventListener();
 start();
