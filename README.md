@@ -6,6 +6,7 @@
 * The content of the game is completely responsive.
 * The game can be played on moblie phones, desktops and devices with a mouse or clickpad.
 * Hope you enjoy my game!
+* [Link to Crystal Collector](https://juthikashetye.github.io/unit-4-game/)
 
 ## Actions
 
